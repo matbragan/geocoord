@@ -1,4 +1,4 @@
-package geoapi
+package geocoord
 
 import (
 	"bytes"
