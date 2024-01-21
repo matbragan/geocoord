@@ -8,7 +8,7 @@ import (
 )
 
 // APIEndpoint is the URL of your Python API.
-const APIEndpoint = "http://http://127.0.0.1:5000/get_coordinates"
+const APIEndpoint = "https://geo-coord-api.vercel.app/"
 
 // Coordinates represents the latitude and longitude.
 type Coordinates struct {
