@@ -6,7 +6,7 @@
 go mod init example.com/my-golib-demo
 ```
 
-#### Get the geocoord module
+#### Get the geocoord package
 ```sh
 go get github.com/matbragan/geocoord
 ```
@@ -23,13 +23,13 @@ import (
 
 func main() {
     zip_code := "87109"
-	coordinates, err := getCoordinates(zip_code)
-
-	if err != nil {
-		fmt.Printf("Error: %v/n", err)
-		return
-	}
-
-	fmt.Printf("Latitude: %f, Longitude: %f\n", coordinates.Latitude, coordinates.Longitude)
+    coordinates, err := getCoordinates(zip_code)
+    
+    if err != nil {
+        fmt.Printf("Error: %v/n", err)
+        return
+    }
+    
+    fmt.Printf("Latitude: %f, Longitude: %f\n", coordinates.Latitude, coordinates.Longitude)
 }
 ```
