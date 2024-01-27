@@ -16,25 +16,28 @@ type Coordinates struct {
 	Longitude float64 `json:"longitude"`
 }
 
-// getCoordinates retrieves the coordinates for a given ZIP code using the Python API.
-func getCoordinates(zipCode string) (Coordinates, error) {
+// GetCoordinates retrieves the coordinates for a given ZIP code using the Python API.
+func GetCoordinates(zipCode string) (Coordinates, error) {
+
+	// Define the body data
 	requestBody, err := json.Marshal(map[string]string{"zip_code": zipCode})
 	if err != nil {
 		return Coordinates{}, fmt.Errorf("error marshalling JSON: %v", err)
 	}
 
-	resp, err := http.Post(APIEndpoint, "application/json", bytes.NewBuffer(requestBody))
+	// Make a POST request
+	response, err := http.Post(APIEndpoint, "application/json", bytes.NewBuffer(requestBody))
 	if err != nil {
 		return Coordinates{}, fmt.Errorf("error making HTTP request: %v", err)
 	}
-	defer resp.Body.Close()
+	defer response.Body.Close()
 
-	if resp.StatusCode != http.StatusOK {
-		return Coordinates{}, fmt.Errorf("unexpected response status: %v", resp.Status)
+	if response.StatusCode != http.StatusOK {
+		return Coordinates{}, fmt.Errorf("unexpected response status: %v", response.Status)
 	}
 
 	var coordinates Coordinates
-	if err := json.NewDecoder(resp.Body).Decode(&coordinates); err != nil {
+	if err := json.NewDecoder(response.Body).Decode(&coordinates); err != nil {
 		return Coordinates{}, fmt.Errorf("error decoding JSON response: %v", err)
 	}
 
