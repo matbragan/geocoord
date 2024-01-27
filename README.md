@@ -23,7 +23,7 @@ import (
 
 func main() {
     zip_code := "87109"
-    coordinates, err := getCoordinates(zip_code)
+    coordinates, err := GetCoordinates(zip_code)
     
     if err != nil {
         fmt.Printf("Error: %v/n", err)
