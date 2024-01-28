@@ -1,9 +1,9 @@
 # Geocoord
 
-### Usage
+## Usage
 #### Initialize your module
 ```sh
-go mod init example.com/my-golib-demo
+go mod init example.com/demo
 ```
 
 #### Get the geocoord package
@@ -33,3 +33,8 @@ func main() {
     fmt.Printf("Latitude: %f, Longitude: %f\n", coordinates.Latitude, coordinates.Longitude)
 }
 ```
+
+## Documentation
+
+You can access the full documentation here: <br>
+[![GoDoc](https://godoc.org/github.com/matbragan/geocoord?status.svg)](https://godoc.org/github.com/matbragan/geocoord)
