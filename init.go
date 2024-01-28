@@ -5,5 +5,5 @@ import (
 )
 
 func init() {
-	fmt.Println("[Geocoord] initializing ...")
+	fmt.Println("Geocoord initializing ...")
 }
