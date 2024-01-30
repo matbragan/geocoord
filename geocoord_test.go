@@ -6,8 +6,8 @@ import (
 )
 
 func TestGetCoordinates(t *testing.T) {
-	zip_code := "87109"
-	coordinates, err := GetCoordinates(zip_code)
+	postalCode := "87109"
+	coordinates, err := GetCoordinates(postalCode)
 
 	if err != nil {
 		fmt.Printf("Error: %v/n", err)

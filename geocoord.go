@@ -17,10 +17,10 @@ type Coordinates struct {
 }
 
 // GetCoordinates retrieves the coordinates for a given ZIP code using the Python API.
-func GetCoordinates(zipCode string) (Coordinates, error) {
+func GetCoordinates(postalCode string) (Coordinates, error) {
 
 	// Define the body data
-	requestBody, err := json.Marshal(map[string]string{"zip_code": zipCode})
+	requestBody, err := json.Marshal(map[string]string{"PostalCode": postalCode})
 	if err != nil {
 		return Coordinates{}, fmt.Errorf("error marshalling JSON: %v", err)
 	}

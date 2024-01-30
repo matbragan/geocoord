@@ -22,8 +22,8 @@ import (
 )
 
 func main() {
-    zip_code := "87109"
-    coordinates, err := geocoord.GetCoordinates(zip_code)
+    postalCode := "87109"
+    coordinates, err := geocoord.GetCoordinates(postalCode)
     
     if err != nil {
         fmt.Printf("Error: %v/n", err)
