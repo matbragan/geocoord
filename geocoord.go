@@ -20,7 +20,7 @@ type Coordinates struct {
 func GetCoordinates(postalCode string) (Coordinates, error) {
 
 	// Define the body data
-	requestBody, err := json.Marshal(map[string]string{"PostalCode": postalCode})
+	requestBody, err := json.Marshal(map[string]string{"postalCode": postalCode})
 	if err != nil {
 		return Coordinates{}, fmt.Errorf("error marshalling JSON: %v", err)
 	}
